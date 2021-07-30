@@ -1,4 +1,4 @@
-# Salary-Predictor-App2
+# Salary-Predictor-App
 This is a salary prediction application for tech roles and was developed in Jupyter notebook with PYTHON, wrapped in FLASK API, and then deployed on Heroku (A Platform as a Service -PaaS).
 
 The application requests input features from users through the HTML form, makes a prediction with its Machine Learning model, and then outputs the result back to the user.

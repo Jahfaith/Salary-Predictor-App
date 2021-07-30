@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Salary Prediction</title>
+    </head>
+    
+<!-- Adding styles like colour, height, width, border to our html page -->
+<style>
+
+
+input[type=text], select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-weight: bolder;
+}
+
+input[type=submit] {
+  width: 80%;
+  background-color: goldenrod;
+  color:black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size:100;
+  font-weight: bolder;
+}
+
+
+input[type=submit]:hover {
+  background-color: orangered;
+}
+form{
+    border-radius: 10px;
+    padding-top: 5%;
+    font-weight: bolder;
+}
+div {
+ 
+  border-radius: 5px;
+  margin-left: 35%;
+  width: 30%;
+  
+}
+h1{
+    color: goldenrod;
+    font-size: 40px;
+    font-weight: bolder;
+}
+h3{
+  color: white;
+}
+
+body {
+            
+            background-image: url("static/img/money.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            padding: 0px;
+        }
+       
+</style>
+
+<body>
+
+<h1>Salary Prediction</h1>
+
+<div>
+ <!-- Html form which will get all the values from user -->
+ <form action="{{ url_for('predict')}}" method="post" style="background-color:#E6E6FA">
+
+<label for="Experience">Experience(in years)</label><br>
+<input type="text" id="Experience" name="Experience" placeholder="0" required="required"><br>
+     
+<!-- drop down options are provided for the categorical features -->
+<label for="Company_location">Company_location</label><br>
+<select id="Company_location" name="Company_location">
+      <option value="America">America</option>
+      <option value="Europe">Europe</option>
+      <option value="Nigeria">Nigeria</option>
+      <option value="Africa">Africa</option>
+    </select><br>
+<label for="Title">Title</label><br>
+    <select id="Title" name="Title" required="required">
+      <option value="Backend">Backend</option>
+      <option value="Frontend">Frontend</option>
+      <option value="Fullstack">Fullstack</option>
+      <option value="IT">IT</option>
+      <option value="DevOps">DevOps</option>
+      <option value="Graphics Designer">Graphics Designer</option>
+      <option value="Data Scientist">Data Scientist</option>
+      <option value="Product Designer">Product Designer</option>
+      <option value="Software Engineer">Software Engineer</option>
+    </select><br>
+<label for="Degree">Degree</label><br>
+    <select id="Degree" name="Degree" required="required">
+      <option value="Yes">Y</option>
+      <option value="No">N</option>
+      </select><br>
+     
+<!-- submit button -->           
+<input type="submit" value="Predict Salary Range">
+</form>
+</div>
+    
+<!-- the predicted text -->
+<h3>{{ prediction_text }}</h3>
+
+</body>
+</html>

@@ -24,6 +24,8 @@ the user interface and the model. We can call it a mini backend of the applicati
 
 2. templates -This folder contains the index.html file.
 
+3. static -This folder contains another folder(img) which contains the background/static image for our web app.
+
 
 ## Developer
 Jahfaith Irokanulo

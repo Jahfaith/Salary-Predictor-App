@@ -78,7 +78,6 @@ def predict():
         #Model Prediction.
         data = [[Degree, Experience, Company_location, Title]]
         sal = model.predict(data)
- 
         
         #Recall that our target variable was also label encoded. '101k-200k' was encoded 0, '201k-300k' was encoded 1 during the model development. Hence,
         if sal==0:
@@ -96,11 +95,11 @@ def predict():
         elif sal==6:
             prediction='>500k'
         
-        #Outputting the result
+        #Outputting the result.
         return render_template('index.html', prediction_text="Expected Salary Range is {}".format(prediction))
         
         
-    #html form to be displayed on screen when no values are inserted; without any output or prediction
+    #html form to be displayed on screen when no values are inserted; without any output or prediction.
     else:
         return render_template('index.html')
 
